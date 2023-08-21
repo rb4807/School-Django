@@ -1,0 +1,63 @@
+{% extends 'principal/base.html' %}
+{% block content %}
+    <div class="container mx-auto px-12 py-12">
+        <div class="mx-auto bg-white rounded-lg shadow-md">
+            <div class="p-4">
+                <h2 class="text-2xl font-bold mb-4">Teacher Details</h2>
+                <img src="./abstract.jpg" alt="Teacher Photo" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <div class="grid grid-cols-2 gap-4 mb-4 mt-[4%] ml-[15%]">
+                    <div class="mb-2">
+                        <span class="font-bold">Name:</span>{{ teacher.name }}
+                    </div>
+                    <div class="mb-2">
+                        <span class="font-bold">Date of Birth:</span>{{ teacher.dob }}
+                    </div>
+                </div>    
+                <div class="grid grid-cols-2 gap-4 mb-4 ml-[15%]">
+                    <div class="mb-2">
+                        <span class="font-bold">Experience:</span>{{ teacher.experience }}
+                    </div>
+                    <div class="mb-2">
+                        <span class="font-bold">Gender:</span>{{ teacher.gender }}
+                    </div>
+                </div>    
+                <div class="grid grid-cols-2 gap-4 mb-4 ml-[15%]">
+                    <div class="mb-2">
+                        <span class="font-bold">Joined Number:</span>{{ teacher.joined_no }}
+                    </div>
+                    <div class="mb-2">
+                        <span class="font-bold">Phone Number:</span>{{ teacher.number }}
+                    </div>
+                </div>    
+                <div class="grid grid-cols-2 gap-4 mb-4 ml-[15%]">
+                    <div class="mb-2">
+                        <span class="font-bold">Degree:</span>{{ teacher.degree }}
+                    </div>
+                    <div class="mb-2">
+                        <span class="font-bold">Address:</span>{{ teacher.address }}
+                    </div>
+                </div>    
+                <div class="grid grid-cols-2 gap-4 mb-4 ml-[15%]">
+                    <div class="mb-2">
+                        <span class="font-bold">Field:</span>{{ teacher.field }}
+                    </div>
+                    <div class="mb-2">
+                        <span class="font-bold">Email ID:</span>{{ teacher.email }}
+                    </div>
+                </div>    
+                <div class="grid grid-cols-2 gap-4 mb-4 ml-[15%]">
+                    <div class="mb-2">
+                        <span class="font-bold">Handling:</span>{{ teacher.handling }}
+                    </div>   
+                </div>    
+                 
+                <div class="flex row mb-4 mt-6 justify-evenly items-center">
+                    <a href="{% url 'teacher_update' teacher.pk %}" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-10 py-4 rounded">Edit</a>
+                    <a href="{% url 'teacher_delete' teacher.pk %}" class="bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-4 rounded">Delete</a>
+                    <a href="{% url 'teacher_list' %}" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-4 rounded">Back to List</a>
+                </div> 
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+        

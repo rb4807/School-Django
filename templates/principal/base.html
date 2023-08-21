@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Stylish Side Navbar</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/search.css' %}">
+    </head>
+    <body class="bg-gray-100">
+        <div class="flex h-screen">
+            <!-- Side Navbar -->
+            <div class="bg-gradient-to-b from-purple-600 to-indigo-600 text-white w-1/4 flex flex-col">
+                {% if user.is_authenticated %}
+                    <div class="p-4">
+                        <h2 class="text-2xl font-bold">Hello, {{user.username}}</h2>
+                    </div>
+                {% endif %}
+                <ul class="flex-1 py-4">
+                    <li class="px-6 py-3 hover:bg-indigo-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                        Dashboard
+                    </li>
+                    <li class="px-6 py-3 hover:bg-indigo-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6m12 0a9 9 0 110-18 9 9 0 010 18z"></path>
+                        </svg>
+                        Profile
+                    </li>
+                    <li class="px-6 py-3 hover:bg-indigo-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler h-6 w-6 mr-3 inline-block icon-tabler-list-details" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M13 5h8" />
+                            <path d="M13 9h5" />
+                            <path d="M13 15h8" />
+                            <path d="M13 19h5" />
+                            <path d="M3 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+                            <path d="M3 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+                        </svg>
+                        <a href="{% url 'teacher_list' %}">Teachers</a>        
+                    </li>
+                    <li class="px-6 py-3 hover:bg-indigo-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler h-6 w-6 mr-3 inline-block icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                            <path d="M16 19h6" />
+                            <path d="M19 16v6" />
+                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4" />
+                        </svg>
+                        <a href="{% url 'teacher_form' %}"> Add Teachers </a>      
+                    </li>
+                    <li class="px-6 py-3 hover:bg-indigo-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler h-6 w-6 mr-3 inline-block icon-tabler-list-details" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M13 5h8" />
+                            <path d="M13 9h5" />
+                            <path d="M13 15h8" />
+                            <path d="M13 19h5" />
+                            <path d="M3 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+                            <path d="M3 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+                        </svg>
+                        <a href="{% url 'student_list' %}">Students </a>         
+                    </li>
+                    <li class="px-6 py-3 hover:bg-indigo-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler h-6 w-6 mr-3 inline-block icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                            <path d="M16 19h6" />
+                            <path d="M19 16v6" />
+                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4" />
+                        </svg>
+                        <a href="{% url 'student_form' %}">Add Students</a>      
+                    </li>
+                    <li class="px-6 py-3 hover:bg-indigo-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        Settings
+                    </li>
+                    <!-- Add more options as needed -->
+                </ul>
+                <div class="p-4">
+                    <a href="{% url 'logout' %}">        
+                        <button class="bg-indigo-800 px-4 py-2 rounded-full hover:bg-indigo-700">Logout</button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="w-3/4 bg-gray-100 p-4">
+                <h1 class="text-center mb-5 text-2xl font-bold">School</h1>
+                <div class="searchbar">
+                    <div class="searchbar-wrapper">
+                        <div class="searchbar-left">
+                            <div class="search-icon-wrapper">
+                                <span class="search-icon searchbar-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <form action="" method="get">
+                            <div class="searchbar-center">
+                                <div class="searchbar-input-spacer"></div>
+                                <input type="search" type="submit" name="query" class="searchbar-input" maxlength="2048" autocapitalize="off" autocomplete="off"  placeholder="Search">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                {% block content %}
+                {% endblock content %}    
+            </div>
+        </div>
+    </body>
+</html>

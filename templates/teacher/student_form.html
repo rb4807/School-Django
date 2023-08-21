@@ -1,0 +1,130 @@
+{% extends 'teacher/base.html' %}
+{% block content %}
+    <div class="container mx-auto px-4 py-8">
+        <div class="mx-auto bg-white shadow-md rounded-lg px-8 py-6">
+            <h1 class="text-3xl font-semibold mb-6">Add Student Details</h1>
+            <form method="post" action="/add_student">
+                {% csrf_token %}
+                <div class="grid grid-cols-3 gap-4 mb-4">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Name:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="text" name="name"><br>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Image:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="file" value="Upload Image" name="image"><br>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Date of Birth:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="date" name="dob"><br>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 mb-4">   
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Gender:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="text" name="gender"><br>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Class:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="number" name="std"><br>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Division</label>
+                        <select class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" name="division" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500">
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                        </select>
+                    </div>    
+                </div> 
+
+                <div class="grid grid-cols-3 gap-4 mb-4">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Admission Number:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="number" name="admission_no"><br>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Class Teacher:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="text" name="teacher"><br>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Address:</label>
+                        <textarea class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" name="address"></textarea><br>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 mb-4"> 
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Father's Name:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="text" name="f_name"><br>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Father's Occupation:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="text" name="f_occupation"><br>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Father's Phone Number:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="number" name="f_number"><br>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-4 mb-4">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Mother's Name:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="text" name="m_name"><br>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Mother's Occupation:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="text" name="m_occupation"><br>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Mother's Phone Number:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="number" name="m_number"><br>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 mb-4">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Guardian's Name:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="text" name="guardian"><br>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Username:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="text" name="username"><br>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Password:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="password" name="password"><br>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-4 mb-4">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Email iD:</label>
+                        <input class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500" type="email" name="email"><br>
+                    </div>
+                </div>
+                <div class="row row-space">
+                    <div class="col-2">
+                        <div class="p-t-15">  
+                            <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-12 py-4 rounded">Save</button>
+                        </div>
+                    </div>
+                    <div class="col-2">                     
+                        {% if messages %}
+                            {% for message in messages %}
+                                {% if message.tags == 'error' %}
+                                    <p class="text-red-700 text-xl mt-[8%]">{{ message }}</div>
+                                {% endif %}
+                                {% if message.tags == 'success' %}
+                                    <p class="text-green-700 text-xl mt-[8%]">{{ message }}</div>
+                                {% endif %}
+                            {% endfor %}
+                      {% endif %}
+                    </div>
+                </div>              
+            </form>
+        </div>
+    </div>
+{% endblock content %}

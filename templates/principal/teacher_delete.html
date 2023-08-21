@@ -1,0 +1,18 @@
+{% extends 'principal/base.html' %}
+{% block content %}
+    <div class="container mx-auto px-12 py-12">
+        <div class="mx-auto bg-white rounded-lg shadow-md">
+            <div class="p-4">
+                <h2 class="text-2xl font-bold mb-4">Confirm Delete</h2>
+                <p>Are you sure you want to delete "{{ teacher.name }}"?</p>
+                <div class="flex row mb-4 mt-6 justify-evenly items-center">
+                    <form method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-4 rounded">Confirm</button>
+                    </form>
+                    <a href="{% url 'teacher_list' %}" class="bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-4 rounded">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}   
